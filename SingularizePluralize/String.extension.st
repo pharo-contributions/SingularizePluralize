@@ -4,6 +4,10 @@ Extension { #name : #String }
 String >> asPlural [
 	"Convert a noun to its plural form"
 	| rule |
+	
+	(self uncountableNouns includes: self) ifTrue: [ ^ self ].
+	(self irregularNouns keys includes: self) ifTrue: [ ^ self irregularNouns at: self ].
+	
 	rule := self pluralizeRules detect: [ :r | r matches: self ].
 	^ rule pluralize: self
 ]
@@ -15,6 +19,20 @@ String >> asSingular [
 ]
 
 { #category : #'*SingularizePluralize' }
+String >> irregularNouns [
+	^ {
+		'person' -> 'people' .
+		'man' -> 'men' .
+		'human' -> 'humans' .
+		'child' -> 'children' .
+		'sex' -> 'sexes' .
+		'move' -> 'moves' .
+		'cow' -> 'kine' .
+		'zombie' -> 'zombies'
+	} asDictionary.
+]
+
+{ #category : #'*SingularizePluralize' }
 String >> pluralizeRules [
 	^ { 
 		PluralizeRule
@@ -23,12 +41,12 @@ String >> pluralizeRules [
 			addEnding: 'zes' .
 			
 		PluralizeRule
-			match: '.*oxen\>'
+			match: 'oxen\>'
 			removeEnding: ''
 			addEnding: '' .
 			
 		PluralizeRule
-			match: '.*ox\>'
+			match: 'ox\>'
 			removeEnding: ''
 			addEnding: 'en' .
 			
@@ -96,11 +114,41 @@ String >> pluralizeRules [
 			match: '.*bus\>'
 			removeEnding: ''
 			addEnding: 'es' .
+			
+		PluralizeRule 
+			match: '.*(alias|status)\>'
+			removeEnding: ''
+			addEnding: 'es' .
+			
+		PluralizeRule 
+			match: '.*(octop|vir)i\>'
+			removeEnding: ''
+			addEnding: '' .
+			
+		PluralizeRule
+			match: '.*(octop|vir)us\>'
+			removeEnding: 'us\>'
+			addEnding: 'i' .
+			
+		PluralizeRule 
+			match: '(ax|test)is\>'
+			removeEnding: 'is\>'
+			addEnding: 'es' .
+			
+		PluralizeRule 
+			match: '.*s\>'
+			removeEnding: ''
+			addEnding: '' .
+			
+		PluralizeRule 
+			match: '.*'
+			removeEnding: ''
+			addEnding: 's'
 	}
 ]
 
 { #category : #'*SingularizePluralize' }
-String >> uncountables [
+String >> uncountableNouns [
 	^ #(
 	equipment
 	fish
