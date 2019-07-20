@@ -6,7 +6,7 @@ String >> asPlural [
 	| rule |
 	
 	(self uncountableNouns includes: self) ifTrue: [ ^ self ].
-	(self irregularNouns keys includes: self) ifTrue: [ ^ self irregularNouns at: self ].
+	self irregularNouns at: self ifPresent: [ :plural | ^ plural ].
 	
 	rule := self pluralizeRules detect: [ :r | r matches: self ].
 	^ rule pluralize: self
@@ -37,23 +37,17 @@ String >> pluralizeRules [
 	^ { 
 		PluralizeRule
 			match: '.*quiz\>'
-			removeEnding: ''
 			addEnding: 'zes' .
 			
 		PluralizeRule
-			match: 'oxen\>'
-			removeEnding: ''
-			addEnding: '' .
+			matchDoNothing: 'oxen\>' .
 			
 		PluralizeRule
 			match: 'ox\>'
-			removeEnding: ''
 			addEnding: 'en' .
 			
 		PluralizeRule
-			match: '.*[ml]ice\>'
-			removeEnding: ''
-			addEnding: '' .
+			matchDoNothing: '.*[ml]ice\>' .
 			
 		PluralizeRule 
 			match: '.*[ml]ouse\>'
@@ -67,7 +61,6 @@ String >> pluralizeRules [
 			
 		PluralizeRule 
 			match: '.*(x|ch|ss|sh)\>'
-			removeEnding: ''
 			addEnding: 'es' .
 			
 		PluralizeRule 
@@ -77,7 +70,6 @@ String >> pluralizeRules [
 			
 		PluralizeRule 
 			match: '.*hive\>'
-			removeEnding: ''
 			addEnding: 's' .
 			
 		PluralizeRule 
@@ -96,9 +88,7 @@ String >> pluralizeRules [
 			addEnding: 'ses' .
 			
 		PluralizeRule 
-			match: '.*[ti]a\>'
-			removeEnding: ''
-			addEnding: '' .
+			matchDoNothing: '.*[ti]a\>' .
 			
 		PluralizeRule 
 			match: '.*[ti]um\>'
@@ -107,23 +97,18 @@ String >> pluralizeRules [
 			
 		PluralizeRule 
 			match: '.*(buffal|potat|tomat)o\>'
-			removeEnding: ''
 			addEnding: 'es' .
 			
 		PluralizeRule
 			match: '.*bus\>'
-			removeEnding: ''
 			addEnding: 'es' .
 			
 		PluralizeRule 
 			match: '.*(alias|status)\>'
-			removeEnding: ''
 			addEnding: 'es' .
 			
 		PluralizeRule 
-			match: '.*(octop|vir)i\>'
-			removeEnding: ''
-			addEnding: '' .
+			matchDoNothing: '.*(octop|vir)i\>' .
 			
 		PluralizeRule
 			match: '.*(octop|vir)us\>'
@@ -136,13 +121,10 @@ String >> pluralizeRules [
 			addEnding: 'es' .
 			
 		PluralizeRule 
-			match: '.*s\>'
-			removeEnding: ''
-			addEnding: '' .
+			matchDoNothing: '.*s\>' .
 			
 		PluralizeRule 
 			match: '.*'
-			removeEnding: ''
 			addEnding: 's'
 	}
 ]

@@ -10,8 +10,23 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+SingularizePluralizeRule class >> match: aMatch addEnding: aNewEnding [
+	^ self new initializeMatch: aMatch removeEnding: '' addEnding: aNewEnding
+]
+
+{ #category : #'as yet unclassified' }
+SingularizePluralizeRule class >> match: aMatch removeEnding: anOldEnding [
+	^ self new initializeMatch: aMatch removeEnding: anOldEnding addEnding: ''
+]
+
+{ #category : #'as yet unclassified' }
 SingularizePluralizeRule class >> match: aMatch removeEnding: anOldEnding addEnding: aNewEnding [
 	^ self new initializeMatch: aMatch removeEnding: anOldEnding addEnding: aNewEnding
+]
+
+{ #category : #'as yet unclassified' }
+SingularizePluralizeRule class >> matchDoNothing: aMatch [
+	^ self new initializeMatch: aMatch removeEnding: '' addEnding: ''
 ]
 
 { #category : #initialization }
