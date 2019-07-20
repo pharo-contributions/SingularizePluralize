@@ -25,6 +25,51 @@ PluralizeTest >> testPluralOfFriend [
 ]
 
 { #category : #tests }
+PluralizeTest >> testPluralOfIndex [
+	self assert: 'index' asPlural equals: 'indices'
+]
+
+{ #category : #tests }
+PluralizeTest >> testPluralOfLice [
+	self assert: 'lice' asPlural equals: 'lice'
+]
+
+{ #category : #tests }
+PluralizeTest >> testPluralOfLouse [
+	self assert: 'louse' asPlural equals: 'lice'
+]
+
+{ #category : #tests }
 PluralizeTest >> testPluralOfMatrix [
 	self assert: 'matrix' asPlural equals: 'matrices'
+]
+
+{ #category : #tests }
+PluralizeTest >> testPluralOfMice [
+	self assert: 'mice' asPlural equals: 'mice'
+]
+
+{ #category : #tests }
+PluralizeTest >> testPluralOfMouse [
+	self assert: 'mouse' asPlural equals: 'mice'
+]
+
+{ #category : #tests }
+PluralizeTest >> testPluralOfOx [
+	self assert: 'ox' asPlural equals: 'oxen'
+]
+
+{ #category : #tests }
+PluralizeTest >> testPluralOfOxen [
+	self assert: 'oxen' asPlural equals: 'oxen'
+]
+
+{ #category : #tests }
+PluralizeTest >> testPluralOfQuiz [
+	self assert: 'quiz' asPlural equals: 'quizzes'
+]
+
+{ #category : #tests }
+PluralizeTest >> testPluralOfVertex [
+	self assert: 'vertex' asPlural equals: 'vertices'
 ]
