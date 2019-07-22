@@ -10,8 +10,8 @@ SingularizeTest >> testSingularOfAliases [
 ]
 
 { #category : #tests }
-SingularizeTest >> testSingularOfArchieves [
-	self assert: 'archieves' asSingular equals: 'archieve'
+SingularizeTest >> testSingularOfArchives [
+	self assert: 'archives' asSingular equals: 'archive'
 ]
 
 { #category : #tests }

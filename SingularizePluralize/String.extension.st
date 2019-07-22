@@ -4,10 +4,6 @@ Extension { #name : #String }
 String >> asPlural [
 	"Convert a noun to its plural form"
 	| rule |
-	
-	(self uncountableNouns includes: self) ifTrue: [ ^ self ].
-	self irregularNouns at: self ifPresent: [ :plural | ^ plural ].
-	
 	rule := self pluralizeRules detect: [ :r | r matches: self ].
 	^ rule pluralize: self
 ]
@@ -16,9 +12,6 @@ String >> asPlural [
 String >> asSingular [
 	"Convert a noun to its singular form"
 	| rule |
-	
-	(self uncountableNouns includes: self) ifTrue: [ ^ self ].
-	(self irregularNouns values includes: self) ifTrue: [ ^ self irregularNouns keyAtValue: self ].
 	
 	rule := self singularizeRules
 		detect: [ :r | r matches: self ]
@@ -44,7 +37,20 @@ String >> irregularNouns [
 
 { #category : #'*SingularizePluralize' }
 String >> pluralizeRules [
-	^ { 
+	| rules |
+	
+	rules := (self uncountableNouns collect: [ :noun |
+		PluralizeRule 
+			matchDoNothing: '.*', noun, '\>'
+		]) asOrderedCollection.
+	
+	self irregularNouns keysAndValuesDo: [ :singular :plural |
+		rules add: (PluralizeRule 
+			match: '.*', singular, '\>'
+			removeEnding: singular, '\>'
+			addEnding: plural) ].
+	
+	rules addAll: { 
 		PluralizeRule
 			match: '.*quiz\>'
 			addEnding: 'zes' .
@@ -136,12 +142,27 @@ String >> pluralizeRules [
 		PluralizeRule 
 			match: '.*'
 			addEnding: 's'
-	}
+	}.
+		
+	^ rules
 ]
 
 { #category : #'*SingularizePluralize' }
 String >> singularizeRules [
-	^ { 
+	| rules |
+	
+	rules := (self uncountableNouns collect: [ :noun |
+		SingularizeRule 
+			matchDoNothing: '.*', noun, '\>'
+		]) asOrderedCollection.
+	
+	self irregularNouns keysAndValuesDo: [ :singular :plural |
+		rules add: (SingularizeRule 
+			match: '.*', plural, '\>'
+			removeEnding: plural, '\>'
+			addEnding: singular) ].
+		
+	rules addAll: { 
 		SingularizeRule 
 			match: '.*databases\>'
 			removeEnding: 's\>' .
@@ -255,7 +276,9 @@ String >> singularizeRules [
 		SingularizeRule 
 			match: '.*s\>'
 			removeEnding: 's\>'
-	}
+	}.
+	
+	^ rules
 ]
 
 { #category : #'*SingularizePluralize' }
@@ -269,5 +292,7 @@ String >> uncountableNouns [
 	rice
 	series
 	sheep
-	species).
+	species
+	beef
+	folk).
 ]

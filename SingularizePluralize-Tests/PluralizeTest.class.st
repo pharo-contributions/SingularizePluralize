@@ -11,7 +11,7 @@ PluralizeTest >> testPluralOfAlias [
 
 { #category : #tests }
 PluralizeTest >> testPluralOfArchive [
-	self assert: 'archieve' asPlural equals: 'archieves'
+	self assert: 'archive' asPlural equals: 'archives'
 ]
 
 { #category : #tests }
