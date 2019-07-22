@@ -20,7 +20,10 @@ String >> asSingular [
 	(self uncountableNouns includes: self) ifTrue: [ ^ self ].
 	(self irregularNouns values includes: self) ifTrue: [ ^ self irregularNouns keyAtValue: self ].
 	
-	rule := self singularizeRules detect: [ :r | r matches: self ].
+	rule := self singularizeRules
+		detect: [ :r | r matches: self ]
+		ifNone: [ ^ self ].
+		
 	^ rule singularize: self
 ]
 
