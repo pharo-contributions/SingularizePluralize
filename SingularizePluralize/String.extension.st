@@ -15,7 +15,13 @@ String >> asPlural [
 { #category : #'*SingularizePluralize' }
 String >> asSingular [
 	"Convert a noun to its singular form"
-	self shouldBeImplemented
+	| rule |
+	
+	(self uncountableNouns includes: self) ifTrue: [ ^ self ].
+	(self irregularNouns values includes: self) ifTrue: [ ^ self irregularNouns keyAtValue: self ].
+	
+	rule := self singularizeRules detect: [ :r | r matches: self ].
+	^ rule singularize: self
 ]
 
 { #category : #'*SingularizePluralize' }
@@ -126,6 +132,125 @@ String >> pluralizeRules [
 		PluralizeRule 
 			match: '.*'
 			addEnding: 's'
+	}
+]
+
+{ #category : #'*SingularizePluralize' }
+String >> singularizeRules [
+	^ { 
+		SingularizeRule 
+			match: '.*databases\>'
+			removeEnding: 's\>' .
+			
+		SingularizeRule
+			match: '.*quizzes\>'
+			removeEnding: 'zes\>' .
+			
+		SingularizeRule 
+			match: '.*matrices\>'
+			removeEnding: 'ices\>'
+			addEnding: 'ix' .
+			
+		SingularizeRule 
+			match: '.*(vert|ind)ices\>'
+			removeEnding: 'ices\>'
+			addEnding: 'ex' .
+			
+		SingularizeRule 
+			match: 'oxen\>'
+			removeEnding: 'en\>' .
+			
+		SingularizeRule 
+			match: '.*(alias|status)es\>'
+			removeEnding: 'es\>' .
+			
+		SingularizeRule 
+			matchDoNothing: '.*(alias|status)\>' .
+			
+		SingularizeRule
+			match: '.*(octop|vir)(us|i)\>'
+			removeEnding: '(us|i)\>'
+			addEnding: 'us' .
+			
+		SingularizeRule 
+			match: 'ax[ie]s\>'
+			removeEnding: '[ie]s\>'
+			addEnding: 'is' .
+			
+		SingularizeRule 
+			match: '.*(cris|test)(is|es)\>'
+			removeEnding: '(is|es)\>'
+			addEnding: 'is' .
+			
+		SingularizeRule
+			match: '.*schoes\>' 
+			removeEnding: 's\>' .
+			
+		SingularizeRule 
+			match: '.*oes\>'
+			removeEnding: 'es\>' .
+			
+		SingularizeRule 
+			matchDoNothing: '.*bus\>' .
+			
+		SingularizeRule 
+			match: '.*buses\>'
+			removeEnding: 'es\>' .
+			
+		SingularizeRule 
+			match: '.[ml]ice\>'
+			removeEnding: 'ice\>'
+			addEnding: 'ouse' .
+			
+		SingularizeRule
+			match: '.*(x|ch|ss|sh)es\>'
+			removeEnding: 'es\>' .
+			
+		SingularizeRule 
+			match: '.*movies\>'
+			removeEnding: 's\>' .
+			
+		SingularizeRule 
+			matchDoNothing: '.*series\>' .
+			
+		SingularizeRule 
+			match: '.*([^aeiouy]|qu)ies\>'
+			removeEnding: 'ies\>'
+			addEnding: 'y' .
+			
+		SingularizeRule
+			match: '.*[lr]ves\>'
+			removeEnding: 'ves\>'
+			addEnding: 'f' .
+			
+		SingularizeRule
+			match: '.*(tive|hive)s\>'
+			removeEnding: 's\>' .
+			
+		SingularizeRule
+			match: '.*[^f]ves\>'
+			removeEnding: 'ves\>'
+			addEnding: 'fe' .
+			
+		SingularizeRule 
+			match: '.*(the|synop|progno|parenthe|diagno|ba|analy)(sis|ses)\>'
+			removeEnding: '(sis|ses)\>'
+			addEnding: 'sis' .
+			
+		SingularizeRule 
+			match: '.*[ti]a\>'
+			removeEnding: 'a\>'
+			addEnding: 'um' .
+			
+		SingularizeRule 
+			matchDoNothing: '.*news\>' .
+			
+		SingularizeRule
+			matchDoNothing: '.*ss\>' .
+			
+		SingularizeRule 
+			match: '.*s\>'
+			removeEnding: 's\>'
 	}
 ]
 
