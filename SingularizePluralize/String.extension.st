@@ -37,7 +37,8 @@ String >> irregularNouns [
 		'sex' -> 'sexes' .
 		'move' -> 'moves' .
 		'cow' -> 'kine' .
-		'zombie' -> 'zombies'
+		'zombie' -> 'zombies' .
+		'foot' -> 'feet'
 	} asDictionary.
 ]
 
@@ -186,7 +187,7 @@ String >> singularizeRules [
 			addEnding: 'is' .
 			
 		SingularizeRule
-			match: '.*schoes\>' 
+			match: '.*shoes\>' 
 			removeEnding: 's\>' .
 			
 		SingularizeRule 
@@ -201,7 +202,7 @@ String >> singularizeRules [
 			removeEnding: 'es\>' .
 			
 		SingularizeRule 
-			match: '.[ml]ice\>'
+			match: '.*[ml]ice\>'
 			removeEnding: 'ice\>'
 			addEnding: 'ouse' .
 			
