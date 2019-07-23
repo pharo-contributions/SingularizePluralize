@@ -48,3 +48,7 @@ Similarly, we can convert plural nouns to their singular forms:
 'theses' asSingular. "thesis"
 'auditoria' asSingular. "auditorium"
 ```
+
+## If you find a mistake
+
+Natural languages including English are very complex and irregular. It is hard to capture all rules and exceptions of pluralization with one algorithm. If you try to convert a noun to its singular/plural form and encounter a mistake, please report it by creating an issue with the title **Singular (Plural) of "X" should be "Y" not "Z"**. I will create a rule or add an exception to cover that case.
