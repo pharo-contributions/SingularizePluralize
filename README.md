@@ -8,7 +8,7 @@
 [![Pharo version](https://img.shields.io/badge/Pharo-7.0-%23aac9ff.svg)](https://pharo.org/download)
 [![Pharo version](https://img.shields.io/badge/Pharo-8.0-%23aac9ff.svg)](https://pharo.org/download)
 
-Transforming singular nouns to their plural form and vice versa.
+A simple [Pharo](http://pharo.org/) library for transforming singular nouns to their plural form and vice versa. The implementation is based on the [inflection](https://inflection.readthedocs.io/en/latest/_modules/inflection.html) library in Python.
 
 ## Installation
 
@@ -23,7 +23,7 @@ Metacello new
 
 ## How to use it?
 
-The package simply extends class `String` with two messages: `asSingular` and `asPlural`. These are some examples of converting singular nouns to their plural forms:
+The package simply extends class `String` with two messages: `asSingular` and `asPlural`. Here are some examples of converting singular nouns to their plural forms:
 
 ```Smalltalk
 'banana' asPlural. "bananas"
