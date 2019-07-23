@@ -10,6 +10,11 @@ SingularizeTest >> testSingularOfAliases [
 ]
 
 { #category : #tests }
+SingularizeTest >> testSingularOfAnalyses [
+	self assert: 'analyses' asSingular equals: 'analysis'
+]
+
+{ #category : #tests }
 SingularizeTest >> testSingularOfArchives [
 	self assert: 'archives' asSingular equals: 'archive'
 ]
@@ -40,8 +45,23 @@ SingularizeTest >> testSingularOfBeef [
 ]
 
 { #category : #tests }
+SingularizeTest >> testSingularOfBeliefs [
+	self assert: 'beliefs' asSingular equals: 'belief'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfBlitzes [
+	self assert: 'blitzes' asSingular equals: 'blitz'
+]
+
+{ #category : #tests }
 SingularizeTest >> testSingularOfBoxes [
 	self assert: 'boxes' asSingular equals: 'box'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfBoys [
+	self assert: 'boys' asSingular equals: 'boy'
 ]
 
 { #category : #tests }
@@ -50,8 +70,33 @@ SingularizeTest >> testSingularOfBuses [
 ]
 
 { #category : #tests }
+SingularizeTest >> testSingularOfCacti [
+	self assert: 'cacti' asSingular equals: 'cactus'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfCats [
+	self assert: 'cats' asSingular equals: 'cat'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfChefs [
+	self assert: 'chefs' asSingular equals: 'chef'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfChiefs [
+	self assert: 'chiefs' asSingular equals: 'chief'
+]
+
+{ #category : #tests }
 SingularizeTest >> testSingularOfChildren [
 	self assert: 'children' asSingular equals: 'child'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfCities [
+	self assert: 'cities' asSingular equals: 'city'
 ]
 
 { #category : #tests }
@@ -65,13 +110,28 @@ SingularizeTest >> testSingularOfCountries [
 ]
 
 { #category : #tests }
+SingularizeTest >> testSingularOfCriteria [
+	self assert: 'criteria' asSingular equals: 'criterion'
+]
+
+{ #category : #tests }
 SingularizeTest >> testSingularOfData [
 	self assert: 'data' asSingular equals: 'datum'
 ]
 
 { #category : #tests }
+SingularizeTest >> testSingularOfDeer [
+	self assert: 'deer' asSingular equals: 'deer'
+]
+
+{ #category : #tests }
 SingularizeTest >> testSingularOfDwarves [
 	self assert: 'dwarves' asSingular equals: 'dwarf'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfEllipses [
+	self assert: 'ellipses' asSingular equals: 'ellipse'
 ]
 
 { #category : #tests }
@@ -85,6 +145,21 @@ SingularizeTest >> testSingularOfFeet [
 ]
 
 { #category : #tests }
+SingularizeTest >> testSingularOfFezzes [
+	self assert: 'fezzes' asSingular equals: 'fez'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfFish [
+	self assert: 'fish' asSingular equals: 'fish'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfFoci [
+	self assert: 'foci' asSingular equals: 'focus'
+]
+
+{ #category : #tests }
 SingularizeTest >> testSingularOfFolk [
 	self assert: 'folk' asSingular equals: 'folk'
 ]
@@ -95,8 +170,28 @@ SingularizeTest >> testSingularOfFriends [
 ]
 
 { #category : #tests }
+SingularizeTest >> testSingularOfGasses [
+	self assert: 'gasses' asSingular equals: 'gas'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfGeese [
+	self assert: 'geese' asSingular equals: 'goose'
+]
+
+{ #category : #tests }
 SingularizeTest >> testSingularOfGlasses [
 	self assert: 'glasses' asSingular equals: 'glass'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfHalos [
+	self assert: 'halos' asSingular equals: 'halo'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfHouses [
+	self assert: 'houses' asSingular equals: 'house'
 ]
 
 { #category : #tests }
@@ -122,6 +217,16 @@ SingularizeTest >> testSingularOfLice [
 { #category : #tests }
 SingularizeTest >> testSingularOfLouse [
 	self assert: 'louse' asSingular equals: 'louse'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfLunches [
+	self assert: 'lunches' asSingular equals: 'lunch'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfMarshes [
+	self assert: 'marshes' asSingular equals: 'marsh'
 ]
 
 { #category : #tests }
@@ -165,13 +270,58 @@ SingularizeTest >> testSingularOfOxen [
 ]
 
 { #category : #tests }
+SingularizeTest >> testSingularOfPeople [
+	self assert: 'people' asSingular equals: 'person'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfPhenomena [
+	self assert: 'phenomena' asSingular equals: 'phenomenon'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfPhotos [
+	self assert: 'photos' asSingular equals: 'photo'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfPianos [
+	self assert: 'pianos' asSingular equals: 'piano'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfPotatoes [
+	self assert: 'potatoes' asSingular equals: 'potato'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfPuppies [
+	self assert: 'puppies' asSingular equals: 'puppy'
+]
+
+{ #category : #tests }
 SingularizeTest >> testSingularOfQuizzes [
 	self assert: 'quizzes' asSingular equals: 'quiz'
 ]
 
 { #category : #tests }
+SingularizeTest >> testSingularOfRays [
+	self assert: 'rays' asSingular equals: 'ray'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfRoofs [
+	self assert: 'roofs' asSingular equals: 'roof'
+]
+
+{ #category : #tests }
 SingularizeTest >> testSingularOfSelves [
 	self assert: 'selves' asSingular equals: 'self'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfSeries [
+	self assert: 'series' asSingular equals: 'series'
 ]
 
 { #category : #tests }
@@ -185,8 +335,23 @@ SingularizeTest >> testSingularOfShoes [
 ]
 
 { #category : #tests }
+SingularizeTest >> testSingularOfSpecies [
+	self assert: 'species' asSingular equals: 'species'
+]
+
+{ #category : #tests }
 SingularizeTest >> testSingularOfStatuses [
 	self assert: 'statuses' asSingular equals: 'status'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfTaxes [
+	self assert: 'taxes' asSingular equals: 'tax'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfTeeth [
+	self assert: 'teeth' asSingular equals: 'tooth'
 ]
 
 { #category : #tests }
@@ -200,6 +365,11 @@ SingularizeTest >> testSingularOfTomatoes [
 ]
 
 { #category : #tests }
+SingularizeTest >> testSingularOfTrusses [
+	self assert: 'trusses' asSingular equals: 'truss'
+]
+
+{ #category : #tests }
 SingularizeTest >> testSingularOfVertices [
 	self assert: 'vertices' asSingular equals: 'vertex'
 ]
@@ -210,8 +380,23 @@ SingularizeTest >> testSingularOfViri [
 ]
 
 { #category : #tests }
+SingularizeTest >> testSingularOfVolcanoes [
+	self assert: 'volcanoes' asSingular equals: 'volcano'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfVolcanos [
+	self assert: 'volcanos' asSingular equals: 'volcano'
+]
+
+{ #category : #tests }
 SingularizeTest >> testSingularOfWives [
 	self assert: 'wives' asSingular equals: 'wife'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfWolves [
+	self assert: 'wolves' asSingular equals: 'wolf'
 ]
 
 { #category : #tests }

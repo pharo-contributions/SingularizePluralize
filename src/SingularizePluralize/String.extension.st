@@ -31,7 +31,9 @@ String >> irregularNouns [
 		'move' -> 'moves' .
 		'cow' -> 'kine' .
 		'zombie' -> 'zombies' .
-		'foot' -> 'feet'
+		'foot' -> 'feet' .
+		'goose' -> 'geese' .
+		'tooth' -> 'teeth'
 	} asDictionary.
 ]
 
@@ -52,8 +54,12 @@ String >> pluralizeRules [
 	
 	rules addAll: { 
 		PluralizeRule
-			match: '.*quiz\>'
+			match: '.*(fe|qui)z\>'
 			addEnding: 'zes' .
+			
+		PluralizeRule 
+			match: '.*gas\>'
+			addEnding: 'ses' .
 			
 		PluralizeRule
 			matchDoNothing: 'oxen\>' .
@@ -74,10 +80,6 @@ String >> pluralizeRules [
 			match: '.*(matr|vert|ind)(ix|ex)\>'
 			removeEnding: '(ix|ex)\>'
 			addEnding: 'ices' .
-			
-		PluralizeRule 
-			match: '.*(x|ch|ss|sh)\>'
-			addEnding: 'es' .
 			
 		PluralizeRule 
 			match: '.*([^aeiouy]|qu)y\>'
@@ -116,24 +118,25 @@ String >> pluralizeRules [
 			addEnding: 'es' .
 			
 		PluralizeRule
-			match: '.*bus\>'
-			addEnding: 'es' .
-			
-		PluralizeRule 
-			match: '.*(alias|status)\>'
-			addEnding: 'es' .
-			
-		PluralizeRule 
-			matchDoNothing: '.*(octop|vir)i\>' .
-			
-		PluralizeRule
-			match: '.*(octop|vir)us\>'
+			match: '.*(octop|vir|cact|foc)us\>'
 			removeEnding: 'us\>'
 			addEnding: 'i' .
 			
 		PluralizeRule 
+			matchDoNothing: '.*(octop|vir|cact|foc)i\>' .
+			
+		PluralizeRule 
+			match: '.*on\>'
+			removeEnding: 'on\>'
+			addEnding: 'a' .
+			
+		PluralizeRule 
 			match: '(ax|test)is\>'
 			removeEnding: 'is\>'
+			addEnding: 'es' .
+			
+		PluralizeRule 
+			match: '.*(x|ch|ss|sh|z|s)\>'
 			addEnding: 'es' .
 			
 		PluralizeRule 
@@ -168,8 +171,12 @@ String >> singularizeRules [
 			removeEnding: 's\>' .
 			
 		SingularizeRule
-			match: '.*quizzes\>'
+			match: '.*(fez|quiz)zes\>'
 			removeEnding: 'zes\>' .
+			
+		SingularizeRule 
+			match: '.*gasses\>'
+			removeEnding: 'ses\>' .
 			
 		SingularizeRule 
 			match: '.*matrices\>'
@@ -193,7 +200,7 @@ String >> singularizeRules [
 			matchDoNothing: '.*(alias|status)\>' .
 			
 		SingularizeRule
-			match: '.*(octop|vir)(us|i)\>'
+			match: '.*(octop|vir|cact|foc)(us|i)\>'
 			removeEnding: '(us|i)\>'
 			addEnding: 'us' .
 			
@@ -228,7 +235,7 @@ String >> singularizeRules [
 			addEnding: 'ouse' .
 			
 		SingularizeRule
-			match: '.*(x|ch|ss|sh)es\>'
+			match: '.*(x|ch|ss|sh|z)es\>'
 			removeEnding: 'es\>' .
 			
 		SingularizeRule 
@@ -263,9 +270,19 @@ String >> singularizeRules [
 			addEnding: 'sis' .
 			
 		SingularizeRule 
+			match: '.*criteria\>'
+			removeEnding: 'a\>'
+			addEnding: 'on' .
+			
+		SingularizeRule 
 			match: '.*[ti]a\>'
 			removeEnding: 'a\>'
 			addEnding: 'um' .
+			
+		SingularizeRule 
+			match: '.*a\>'
+			removeEnding: 'a\>'
+			addEnding: 'on' .
 			
 		SingularizeRule 
 			matchDoNothing: '.*news\>' .
@@ -294,5 +311,6 @@ String >> uncountableNouns [
 	sheep
 	species
 	beef
-	folk).
+	folk
+	deer).
 ]
