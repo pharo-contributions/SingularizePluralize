@@ -8,7 +8,7 @@
 [![Pharo version](https://img.shields.io/badge/Pharo-7.0-%23aac9ff.svg)](https://pharo.org/download)
 [![Pharo version](https://img.shields.io/badge/Pharo-8.0-%23aac9ff.svg)](https://pharo.org/download)
 
-Transforming singular nouns to their plural form and vice versa.
+A simple [Pharo](http://pharo.org/) library for transforming singular nouns to their plural form and vice versa. The implementation is based on the [inflection](https://inflection.readthedocs.io/en/latest/_modules/inflection.html) library in Python.
 
 ## Installation
 
@@ -19,4 +19,32 @@ Metacello new
   baseline: 'SingularizePluralize';
   repository: 'github://olekscode/SingularizePluralize/src';
   load.
+```
+
+## How to use it?
+
+The package simply extends class `String` with two messages: `asSingular` and `asPlural`. Here are some examples of converting singular nouns to their plural forms:
+
+```Smalltalk
+'banana' asPlural. "bananas"
+'man' asPlural. "men"
+'woman' asPlural. "women"
+'matrix' asPlural. "matrices"
+'child' asPlural. "children"
+'knife' asPlural. "knives"
+'thesis' asPlural. "theses"
+'auditorium' asPlural. "auditoria"
+```
+
+Similarly, we can convert plural nouns to their singular forms:
+
+```Smalltalk
+'bananas' asSingular. "banana"
+'men' asSingular. "man"
+'women' asSingular. "woman"
+'matrices' asSingular. "matrix"
+'children' asSingular. "child"
+'knives' asSingular. "knife"
+'theses' asSingular. "thesis"
+'auditoria' asSingular. "auditorium"
 ```
