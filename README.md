@@ -20,3 +20,31 @@ Metacello new
   repository: 'github://olekscode/SingularizePluralize/src';
   load.
 ```
+
+## How to use it?
+
+The package simply extends class `String` with two messages: `asSingular` and `asPlural`. These are some examples of converting singular nouns to their plural forms:
+
+```Smalltalk
+'banana' asPlural. "bananas"
+'man' asPlural. "men"
+'woman' asPlural. "women"
+'matrix' asPlural. "matrices"
+'child' asPlural. "children"
+'knife' asPlural. "knives"
+'thesis' asPlural. "theses"
+'auditorium' asPlural. "auditoria"
+```
+
+Similarly, we can convert plural nouns to their singular forms:
+
+```Smalltalk
+'bananas' asSingular. "banana"
+'men' asSingular. "man"
+'women' asSingular. "woman"
+'matrices' asSingular. "matrix"
+'children' asSingular. "child"
+'knives' asSingular. "knife"
+'theses' asSingular. "thesis"
+'auditoria' asSingular. "auditorium"
+```
