@@ -7,7 +7,7 @@
 A simple [Pharo](http://pharo.org/) library for transforming singular nouns to their plural form and vice versa. The implementation is based on the [inflection](https://inflection.readthedocs.io/en/latest/_modules/inflection.html) library in Python.
 
 ## Installation
-
+ 
 To install the packages of SingularizePluralize, go to the Playground (Ctrl+OW) in your Pharo image and execute the following Metacello script (select it and press Do-it button or Ctrl+D):
 
 ```Smalltalk
