@@ -120,6 +120,11 @@ SingularizeTest >> testSingularOfCountries [
 ]
 
 { #category : #tests }
+SingularizeTest >> testSingularOfCows [
+	self assert: 'cows' asSingular equals: 'cow'
+]
+
+{ #category : #tests }
 SingularizeTest >> testSingularOfCriteria [
 	self assert: 'criteria' asSingular equals: 'criterion'
 ]

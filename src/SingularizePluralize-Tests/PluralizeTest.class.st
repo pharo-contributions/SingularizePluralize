@@ -120,6 +120,11 @@ PluralizeTest >> testPluralOfCountry [
 ]
 
 { #category : #tests }
+PluralizeTest >> testPluralOfCow [
+	self assert: 'cow' asPlural equals: 'cows'
+]
+
+{ #category : #tests }
 PluralizeTest >> testPluralOfCriterion [
 	self assert: 'criterion' asPlural equals: 'criteria'
 ]

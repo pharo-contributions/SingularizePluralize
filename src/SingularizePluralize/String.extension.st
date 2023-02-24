@@ -29,7 +29,6 @@ String >> irregularNouns [
 		'child' -> 'children' .
 		'sex' -> 'sexes' .
 		'move' -> 'moves' .
-		'cow' -> 'kine' .
 		'zombie' -> 'zombies' .
 		'foot' -> 'feet' .
 		'goose' -> 'geese' .
