@@ -20,6 +20,11 @@ PluralizeTest >> testPluralOfArchive [
 ]
 
 { #category : #tests }
+PluralizeTest >> testPluralOfAssertion [
+	self assert: 'assertion' asPlural equals: 'assertions'
+]
+
+{ #category : #tests }
 PluralizeTest >> testPluralOfAuditoria [
 	self assert: 'auditoria' asPlural equals: 'auditoria'
 ]
@@ -102,6 +107,11 @@ PluralizeTest >> testPluralOfCity [
 { #category : #tests }
 PluralizeTest >> testPluralOfColloquy [
 	self assert: 'colloquy' asPlural equals: 'colloquies'
+]
+
+{ #category : #tests }
+PluralizeTest >> testPluralOfConnection [
+	self assert: 'connection' asPlural equals: 'connections'
 ]
 
 { #category : #tests }
@@ -217,6 +227,11 @@ PluralizeTest >> testPluralOfLady [
 { #category : #tests }
 PluralizeTest >> testPluralOfLice [
 	self assert: 'lice' asPlural equals: 'lice'
+]
+
+{ #category : #tests }
+PluralizeTest >> testPluralOfLocation [
+	self assert: 'location' asPlural equals: 'locations'
 ]
 
 { #category : #tests }

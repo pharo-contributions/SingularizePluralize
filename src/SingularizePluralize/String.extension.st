@@ -33,7 +33,9 @@ String >> irregularNouns [
 		'zombie' -> 'zombies' .
 		'foot' -> 'feet' .
 		'goose' -> 'geese' .
-		'tooth' -> 'teeth'
+		'tooth' -> 'teeth' .
+		'criterion' -> 'criteria' .
+		'phenomenon' -> 'phenomena'
 	} asDictionary.
 ]
 
@@ -124,11 +126,6 @@ String >> pluralizeRules [
 			
 		PluralizeRule 
 			matchDoNothing: '.*(octop|vir|cact|foc)i\>' .
-			
-		PluralizeRule 
-			match: '.*on\>'
-			removeEnding: 'on\>'
-			addEnding: 'a' .
 			
 		PluralizeRule 
 			match: '(ax|test)is\>'

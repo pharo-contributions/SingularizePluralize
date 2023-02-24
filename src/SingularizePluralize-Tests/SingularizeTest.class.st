@@ -20,6 +20,11 @@ SingularizeTest >> testSingularOfArchives [
 ]
 
 { #category : #tests }
+SingularizeTest >> testSingularOfAssertions [
+	self assert: 'assertions' asSingular equals: 'assertion'
+]
+
+{ #category : #tests }
 SingularizeTest >> testSingularOfAuditoria [
 	self assert: 'auditoria' asSingular equals: 'auditorium'
 ]
@@ -102,6 +107,11 @@ SingularizeTest >> testSingularOfCities [
 { #category : #tests }
 SingularizeTest >> testSingularOfColloquies [
 	self assert: 'colloquies' asSingular equals: 'colloquy'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfConnections [
+	self assert: 'connections' asSingular equals: 'connection'
 ]
 
 { #category : #tests }
@@ -212,6 +222,11 @@ SingularizeTest >> testSingularOfLadies [
 { #category : #tests }
 SingularizeTest >> testSingularOfLice [
 	self assert: 'lice' asSingular equals: 'louse'
+]
+
+{ #category : #tests }
+SingularizeTest >> testSingularOfLocations [
+	self assert: 'locations' asSingular equals: 'location'
 ]
 
 { #category : #tests }
