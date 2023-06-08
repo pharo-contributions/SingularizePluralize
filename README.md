@@ -1,8 +1,8 @@
 # SingularizePluralize
 
-[![Build status](https://github.com/olekscode/SingularizePluralize/workflows/CI/badge.svg)](https://github.com/olekscode/SingularizePluralize/actions/workflows/test.yml)
-[![Coverage Status](https://coveralls.io/repos/github/olekscode/SingularizePluralize/badge.svg?branch=master)](https://coveralls.io/github/olekscode/SingularizePluralize?branch=master)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/olekscode/SingularizePluralize/master/LICENSE)
+[![Build status](https://github.com/pharo-contributions/SingularizePluralize/workflows/CI/badge.svg)](https://github.com/pharo-contributions/SingularizePluralize/actions/workflows/test.yml)
+[![Coverage Status](https://coveralls.io/repos/github/pharo-contributions/SingularizePluralize/badge.svg?branch=master)](https://coveralls.io/github/pharo-contributions/SingularizePluralize?branch=master)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/pharo-contributions/SingularizePluralize/master/LICENSE)
 
 A simple [Pharo](http://pharo.org/) library for transforming singular nouns to their plural form and vice versa. The implementation is based on the [inflection](https://inflection.readthedocs.io/en/latest/_modules/inflection.html) library in Python.
 
