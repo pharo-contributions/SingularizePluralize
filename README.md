@@ -13,7 +13,7 @@ To install the packages of SingularizePluralize, go to the Playground (Ctrl+OW) 
 ```Smalltalk
 Metacello new
   baseline: 'SingularizePluralize';
-  repository: 'github://olekscode/SingularizePluralize/src';
+  repository: 'github://pharo-contributions/SingularizePluralize/src';
   load.
 ```
 
